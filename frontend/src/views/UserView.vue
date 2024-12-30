@@ -27,13 +27,11 @@
     async created() {
       const user = JSON.parse(localStorage.getItem('user'));
       if (!user) {
-        // Si no hay usuario logueado, redirigir al login
         this.$router.push('/login');
         return;
       }
   
       this.userId = user.id;
-      // Supongamos que el backend tiene una ruta GET /api/users/:id para obtener al usuario
       const res = await fetch(`/api/users/${this.userId}`);
       const data = await res.json();
       if (res.ok) {

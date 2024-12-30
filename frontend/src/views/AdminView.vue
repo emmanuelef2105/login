@@ -82,7 +82,7 @@
     },
     methods: {
       async fetchUsers() {
-        const res = await fetch('/api/users'); // Debes asegurarte que el backend retorne todos los usuarios
+        const res = await fetch('/api/users'); 
         this.users = await res.json();
       },
       async createNewUser() {

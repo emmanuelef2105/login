@@ -31,9 +31,7 @@
           if (!res.ok) {
             this.error = data.error;
           } else {
-            // guardar el rol en localStorage, por ejemplo
             localStorage.setItem('user', JSON.stringify(data.user));
-            // redirigir según el rol
             if (data.user.role === 'desarrollador') {
               this.$router.push('/admin');
             } else {
